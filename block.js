@@ -13,16 +13,6 @@ const currentDateArray = currentDate.split(' ');
 const currentTime = currentDateArray[4];
 const currentTimeInt = currentTime.replaceAll(':', '');
 console.log(`Time: ${currentTimeInt}`);
-/* Mon and Fri
-  LStart:
-  105000
-  LEnd:
-  122000
-  SStart:
-  
-  SEnd:
-  142000
-*/
 /* Tue and Thu
   LStart:
   110800
@@ -41,5 +31,27 @@ console.log(`Time: ${currentTimeInt}`);
   SEnd:
   125000
 */
-
-//if (currentTimeInt >
+function shouldSiteBeBlocked() {
+  if (day == 1) {
+    if (currentTimeInt > 104959 && currentTimeInt < 122000 || currentTimeInt > 141959) {
+      return false;
+    } else {
+      return true;
+    }
+  } else if (day == 2) {
+    if (currentTimeInt > 110759 && currentTimeInt < 122000 || currentTimeInt > 141959) {
+      return false;
+    } else {
+      return true;
+    }
+  } /*else if (day == 3) {
+    if (currentTimeInt > 110759 && currentTimeInt < 122000 || currentTimeInt > 124959) {
+      return false;
+    } else {
+      return true;
+    }
+  }*/
+}
+if (shouldSiteBeBlocked()) {
+  location.replace('/blocked.htm');
+}
