@@ -1,6 +1,6 @@
 // Blocks website access from certain time ranges
 let day = '';
-let currentDate = new Date();
+let currentDate = new Date().toString;
 if (currentDate.includes('Wen')) {
   day = '3';
 } else if (currentDate.includes('Mon') || currentDate.includes('Fri')) {
@@ -24,9 +24,9 @@ console.log(`Time: ${currentTimeInt}`);
 */
 /* Wen
   LStart:
-  ??
+  103300
   LEnd:
-  ??
+  120900
   
   SEnd:
   125000
@@ -44,14 +44,14 @@ function shouldSiteBeBlocked() {
     } else {
       return true;
     }
-  } /*else if (day == 3) {
-    if (currentTimeInt > 110759 && currentTimeInt < 122000 || currentTimeInt > 124959) {
+  } else if (day == 3) {
+    if (currentTimeInt > 103259 && currentTimeInt < 120900 || currentTimeInt > 124959) {
       return false;
     } else {
       return true;
     }
-  }*/
+  }
 }
 if (shouldSiteBeBlocked()) {
-  location.replace('/blocked.htm');
+  location.replace('/block');
 }
