@@ -1,6 +1,6 @@
 // Blocks website access from certain time ranges
 let day = '';
-let currentDate = new Date().toString;
+let currentDate = new Date().toString();
 if (currentDate.includes('Wen')) {
   day = '3';
 } else if (currentDate.includes('Mon') || currentDate.includes('Fri')) {
