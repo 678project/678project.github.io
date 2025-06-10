@@ -1,4 +1,5 @@
 // Blocks website access from certain time ranges
+const get = new URLSearchParams(location.search);
 let day = '';
 let currentDate = new Date().toString();
 if (currentDate.includes('Wen')) {
@@ -52,6 +53,6 @@ function shouldSiteBeBlocked() {
     }
   }
 }
-if (shouldSiteBeBlocked()) {
+if (shouldSiteBeBlocked() && get.get('dev') !== 'true') {
   location.replace('/block');
 }
