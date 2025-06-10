@@ -6,11 +6,11 @@
         <title>678 project</title>
     </head>
     <body>
+        <div id="links"></div>
         <script>
                 const getData = new URLSearchParams(location.search);
                 document.getElementById('links').innerHTML = getData.get('links');
         </script>
-        <div id="links"></div>
         <script src="/block.js"></script>
     </body>
 </html>
