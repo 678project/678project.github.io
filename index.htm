@@ -9,7 +9,15 @@
         <div id="links"></div>
         <script>
                 const getData = new URLSearchParams(location.search);
-                document.getElementById('links').innerHTML = getData.get('links');
+                let urls = getData.get('links').split(',');
+                for (let a = 0; a < urls.length; a++) {
+                    console.log(a);
+                    console.log(urls);
+                    console.log(urls[a]);
+                    const urlElement = document.createElement('a');
+                    urlElement.href = urls[a];
+                    document.body.appendChild(urlElement);
+                }
         </script>
         <script src="/block.js"></script>
     </body>
