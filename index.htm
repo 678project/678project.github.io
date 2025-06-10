@@ -6,7 +6,11 @@
         <title>678 project</title>
     </head>
     <body>
-        <h1>Currently being updated...</h1>
+        <script>
+                const getData = new URLSearchParams(location.search);
+                document.getElementById('links').innerHTML = getData.get('links');
+        </script>
+        <div id="links"></div>
         <script src="/block.js"></script>
     </body>
 </html>
